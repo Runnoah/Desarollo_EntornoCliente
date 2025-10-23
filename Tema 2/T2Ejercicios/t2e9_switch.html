@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+        <body>
+            <script>
+
+                let edad = prompt("¿Cual es tu edad?");
+
+                switch (true) {
+                    case edad < 0 && isNaN(edad):
+                        alert("No existes.");
+                        break;
+                    case edad >= 0 && edad < 13:
+                        alert("Eres un niño");
+                        break;
+                    case edad >= 13 && edad <= 26:
+                        alert("Eres joven");
+                        break;
+                    case edad > 26 && edad <= 60:
+                        alert("Eres adulto");
+                        break;
+                    case edad>60:
+                        alert("Estas jubilado");
+                        break;
+                }
+            </script>
+        </body>
+</html>
