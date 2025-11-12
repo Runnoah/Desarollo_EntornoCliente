@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Math</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <a href="index.html">Indice</a>
+
+        <h2>Elige una de estas cuatro opciones:</h2>
+        <ul>
+            <li>1. Potencia</li>
+            <li>2. Raíz cuadrada</li>
+            <li>3. Redondeo</li>
+            <li>4. Trigonometria</li>
+        </ul>
+        <br/>
+        
+        <label for="eleccion">Opción (1-4):</label>
+        <input type="number" id="eleccion" min="1" max="4" oninput="mostrarCampos()">
+        <br/>
+        
+        <h3>Parámetros:</h3>
+        
+        <div id="potenciaCampos" class="hidden">
+            <label for="inputBase">Base:</label>
+            <input type="number" id="inputBase" value="2">
+            <label for="inputExponente">Exponente:</label>
+            <input type="number" id="inputExponente" value="3">
+            <br/>
+        </div>
+        
+        <div id="numeroCampos" class="hidden">
+            <label for="inputNumero">Número (Raíz/Redondeo):</label>
+            <input type="number" id="inputNumero" value="9.5">
+            <br/>
+        </div>
+        
+        <div id="trigonometriaCampos" class="hidden">
+            <label for="inputAngulo">Ángulo (grados):</label>
+            <input type="number" id="inputAngulo" value="45">
+            <br/>
+        </div>
+
+        <button onclick="operaciones()">Calcular</button>
+        <br/>
+        <div id="resultado"></div>
+
+        <script>
+
+        function ocultarTodos() {
+            document.getElementById("potenciaCampos").classList.add("hidden");
+            document.getElementById("numeroCampos").classList.add("hidden");
+            document.getElementById("trigonometriaCampos").classList.add("hidden");
+            document.getElementById("resultado").innerHTML = ""; // Limpia el resultado al cambiar de opción
+        }
+
+        function mostrarCampos() {
+            let eleccion = parseInt(document.getElementById("eleccion").value);
+
+            ocultarTodos();
+
+            switch (eleccion) {
+                case 1:
+                    document.getElementById("potenciaCampos").classList.remove("hidden");
+                    break;
+                case 2:
+                case 3:
+                    document.getElementById("numeroCampos").classList.remove("hidden");
+                    break;
+                case 4:
+                    document.getElementById("trigonometriaCampos").classList.remove("hidden");
+                    break;
+            }
+        }
+
+        function operaciones() {
+
+            let resultadoDiv = document.getElementById("resultado");
+            let eleccion = parseInt(document.getElementById("eleccion").value);
+
+            resultadoDiv.innerHTML = "";
+
+            switch (eleccion) {
+
+                case 1:
+                    let base = parseFloat(document.getElementById("inputBase").value);
+                    let exponente = parseFloat(document.getElementById("inputExponente").value);
+                    let potencia = Math.pow(base, exponente);
+                    resultadoDiv.innerHTML = "El resultado de **" + base + " elevado a " + exponente + "** es: **" + potencia + "**";
+                    break;
+                    
+                case 2:
+                    let numeroRaiz = parseFloat(document.getElementById("inputNumero").value);
+                    let raiz = Math.sqrt(numeroRaiz);
+                    resultadoDiv.innerHTML = "La raíz cuadrada de **" + numeroRaiz + "** es: **" + raiz + "**";
+                    break;
+                    
+                case 3:
+                    let numeroDecimal = parseFloat(document.getElementById("inputNumero").value);
+                    let redondeo = Math.round(numeroDecimal);
+                    let redondeoAbajo = Math.floor(numeroDecimal);
+                    let redondeoArriba = Math.ceil(numeroDecimal);
+                    resultadoDiv.innerHTML = "El número **" + numeroDecimal + "** redondeado es: **" + redondeo + "**, <br/>redondeado hacia abajo (floor) es: **" + redondeoAbajo + "**, <br/>redondeado hacia arriba (ceil) es: **" + redondeoArriba + "**";
+                    break;
+                    
+                case 4:
+                    let angulo = parseFloat(document.getElementById("inputAngulo").value);
+                    let radianes = angulo * (Math.PI / 180);
+                    let seno = Math.sin(radianes);
+                    let coseno = Math.cos(radianes);
+                    let tangente = Math.tan(radianes);
+                    
+                    resultadoDiv.innerHTML = "Para el ángulo de **" + angulo + "°**:<br/>El seno es: **" + seno.toFixed(4) + "**, <br/>el coseno es: **" + coseno.toFixed(4) + "**, <br/>la tangente es: **" + tangente.toFixed(4) + "**";
+                    break; 
+                    
+                default:
+                     resultadoDiv.innerHTML = "Por favor, selecciona una opción válida (1, 2, 3 o 4).";
+                     break;
+            }
+
+        }   
+
+        </script>
+    </body>
+</html>
