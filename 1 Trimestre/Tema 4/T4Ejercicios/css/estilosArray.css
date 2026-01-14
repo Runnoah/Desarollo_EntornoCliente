@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #05299E 0%, #5E4AE3 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.parte1, .parte2 {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.parte1 > div {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #5E4AE3;
+    transition: transform 0.2s ease;
+}
+
+.parte1 > div:hover {
+    transform: translateX(5px);
+}
+
+.parte2 > div {
+    padding: 20px;
+}
+
+h2 {
+    color: #05299E;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    color: #05299E;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+p {
+    color: #05299E;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+button {
+    background: linear-gradient(135deg, #F26CA7 0%, #F0A7A0 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin: 5px;
+    box-shadow: 0 4px 10px rgba(242, 108, 167, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(242, 108, 167, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(242, 108, 167, 0.3);
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 12px 15px;
+    border: 2px solid #947BD3;
+    border-radius: 8px;
+    font-size: 15px;
+    margin: 8px 0;
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #5E4AE3;
+    box-shadow: 0 0 0 4px rgba(94, 74, 227, 0.15);
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: #947BD3;
+}
+
+span {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #5E4AE3 0%, #947BD3 100%);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    min-height: 20px;
+    box-shadow: 0 3px 10px rgba(94, 74, 227, 0.4);
+}
+
+#ArrayTiempoReal {
+    background: linear-gradient(135deg, #05299E 0%, #5E4AE3 100%);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.3em;
+    box-shadow: 0 6px 15px rgba(5, 41, 158, 0.4);
+    min-height: 60px;
+    border: 3px solid #5E4AE3;
+}
+
+/* OCULTAR DIVS DINÁMICOS HASTA QUE SE HAGA CLIC */
+#opcionesPaisesListado,
+#inputsIntervalo,
+#añadirElecciones,
+#paisesBorrar,
+#consultarDiv,
+#consultarDivPosicion,
+#consultarDivNombre {
+    display: none;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: rgba(94, 74, 227, 0.1);
+    border-radius: 10px;
+    border: 2px solid #5E4AE3;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hacer que los divs sean visibles cuando tengan contenido */
+#opcionesPaisesListado:not(:empty),
+#inputsIntervalo:not(:empty),
+#añadirElecciones:not(:empty),
+#paisesBorrar:not(:empty),
+#consultarDiv:not(:empty),
+#consultarDivPosicion:not(:empty),
+#consultarDivNombre:not(:empty) {
+    display: block;
+}
+
+/* Estilos para los botones del menú principal */
+.parte2 > div > button {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 15px auto;
+    padding: 15px 30px;
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .parte1, .parte2 {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+    
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+    
+    input[type="text"],
+    input[type="number"] {
+        max-width: 100%;
+    }
+    
+    .parte1 > div:hover {
+        transform: none;
+    }
+}

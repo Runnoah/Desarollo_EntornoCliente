@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Circulo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <body>
+
+            <a href="index.html">Indice</a>
+
+            <h2>Calculo del radio</h2>
+            <label>Inserta el radio:</label>
+            <input type="number" id="radioCirculo">
+            <br/>
+            <button onclick="calcularCirculo()">Calcular</button>
+            <br/>
+            <div id="resultadoCirculo"></div>
+
+            <script>
+
+                function calcularCirculo() {
+
+                    let radio = document.getElementById("radioCirculo").value;
+                    let resultadoCirculo = document.getElementById("resultadoCirculo");
+
+                    resultadoCirculo.innerHTML = "El radio es: " + radio + "cm";
+
+                    let diametro = radio * 2;
+
+                    resultadoCirculo.innerHTML += "<br/>El diametro es: " + diametro + "cm";
+
+                    let perimetro = 2 * Math.PI * radio;
+                    resultadoCirculo.innerHTML += "<br/>El perimetro es: " + perimetro.toFixed(2) + "cm";
+
+                    let area = Math.PI * Math.pow(radio, 2);
+                    resultadoCirculo.innerHTML += "<br/>El area es: " + area.toFixed(2) + "cm²";
+
+                    let areaEsfera = 4 * Math.PI * Math.pow(radio, 2);
+                    resultadoCirculo.innerHTML += "<br/>El area de la esfera es: " + areaEsfera.toFixed(2) + "cm²";
+
+                    let volumenEsfera = (4/3) * Math.PI * Math.pow(radio, 3);
+                    resultadoCirculo.innerHTML += "<br/>El volumen de la esfera es: " + volumenEsfera.toFixed(2) + "cm³";
+                }
+
+            </script>
+        </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <a href="index.html">Indice</a>
+
+        <h2>Numeros</h2>
+        <label>Inserta un número entero:</label>
+        <input type="number" id="numeroEntero">
+        <br/>
+        <button onclick="calcularNumero()">Calcular</button>
+        <br/>
+        <div id="resultadoNumero"></div>
+
+        <script>
+
+            function calcularNumero() {
+
+            let numeroEnteroString = document.getElementById("numeroEntero").value;
+            let resultadoNumero = document.getElementById("resultadoNumero");
+
+            // Objeto Number y conversión a número entero (Con esto usamos las funciones de abajo)
+            let numeroEntero = Number(numeroEnteroString);
+
+            // Exponencial
+            let exponencial = numeroEntero.toExponential();
+            resultadoNumero.innerHTML = "Notación exponencial: " + exponencial;
+
+            // Decimales
+            let cuatroDecimales = numeroEntero.toFixed(4);
+            resultadoNumero.innerHTML += "<br/>Número con cuatro decimales: " + cuatroDecimales;
+
+            // Conversion de bases
+            let binario = numeroEntero.toString(2);
+            resultadoNumero.innerHTML += "<br/>Número en binario: " + binario;
+            let octal = numeroEntero.toString(8);
+            resultadoNumero.innerHTML += "<br/>Número en octal: " + octal;
+            let hexadecimal = numeroEntero.toString(16);
+            resultadoNumero.innerHTML += "<br/>Número en hexadecimal: " + hexadecimal;
+
+
+            }
+        </script>
+    </body>
+</html>

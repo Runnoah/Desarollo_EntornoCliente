@@ -1,0 +1,206 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4F000B 0%, #720026 50%, #CE4257 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.area-central {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calculadoraIMC, .calculadoraFCM, .categorias, .horario {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h3 {
+    color: #4F000B;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h4 {
+    color: #720026;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #CE4257;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #FF7F51;
+    box-shadow: 0 0 0 3px rgba(255, 127, 81, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #CE4257 0%, #FF7F51 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 5px;
+    box-shadow: 0 4px 15px rgba(206, 66, 87, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #FF7F51 0%, #FF9B54 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 127, 81, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#resultadoIMC, #resultadoFCM, #horoscopo {
+    display: block;
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #FF9B54 0%, #FF7F51 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#tablaMasaCorporal {
+    display: block;
+    margin-top: 15px;
+    padding: 12px;
+    background: #720026;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#zonasFCM {
+    margin-top: 20px;
+}
+
+#zonasFCM h3 {
+    color: #4F000B;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#zonasFCM ul {
+    list-style: none;
+    padding: 0;
+}
+
+#zonasFCM li {
+    background: linear-gradient(90deg, #FF9B54 0%, #FF7F51 100%);
+    color: white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #CE4257 50%, transparent 100%);
+    margin: 40px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background: linear-gradient(135deg, #720026 0%, #CE4257 100%);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #CE4257;
+    min-height: 50px;
+}
+
+table tr:nth-child(even) {
+    background: rgba(255, 155, 84, 0.1);
+}
+
+table tr:hover {
+    background: rgba(206, 66, 87, 0.1);
+}
+
+.horarioMañana h2, .horarioTarde h2 {
+    color: #4F000B;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    .area-central {
+        padding: 10px;
+    }
+    
+    .calculadoraIMC, .calculadoraFCM, .categorias, .horario {
+        padding: 20px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    table th, table td {
+        padding: 10px 5px;
+    }
+}

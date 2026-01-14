@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tus cumpleaños que caen en domingo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <a href="index.html">Indice</a>
+
+        <h2>¿En cuantos domingos cumples años?</h2>
+
+        <p>Antes contesta, ¿cuando cumples años?
+        <br/>
+        <input type="text" id="diaCumple" placeholder="Dia:">
+        <br/>
+        <input type="text" id="mesCumple" placeholder="Mes:">
+        <br/>
+
+        <p>En total cumples: <span id="resultado"></span> domingos totales</p>
+        <button onclick="calcularCumples()">Generar cumples</button>
+        <script>
+
+            function calcularCumples() {
+
+                let diaCumple = document.getElementById("diaCumple").value;
+                let mesCumple = document.getElementById("mesCumple").value;
+                let resultado = document.getElementById("resultado");
+
+                mesCumple--;
+
+                let añoActual = new Date().getFullYear();
+                let añoMaximo = new Date().setFullYear("2100");
+                let añosDomingo = [];
+
+                for (año = añoActual; año <= 2100; año++) {
+
+                    let fecha = new Date(año, mesCumple, diaCumple);
+
+                    //Si la fecha es 0 pushea el año al array
+                    if (fecha.getDay() === 0) {
+                        añosDomingo.push(año);
+                    }
+
+                }
+                
+                resultado.innerHTML = añosDomingo;
+
+            }            
+
+        </script>
+    </body>
+</html>
