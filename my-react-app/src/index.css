@@ -2,3 +2,13 @@
 .text-lowercase {
     text-transform: lowercase;
 }
+
+.tec-estilo {
+  color: #db65ff;
+  font-weight: bold;
+}
+
+.equipo-estilo {
+  color: #5aa7ff;
+  font-style: italic;
+}
