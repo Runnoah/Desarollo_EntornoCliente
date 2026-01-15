@@ -1,4 +1,4 @@
-# 🚀 Este repositorio se ha mudado
+# 🚀 React se ha mudado
 
 La parte de React ahora se encuentra en una nueva ubicación para ofrecer un mejor soporte y orden.
 
