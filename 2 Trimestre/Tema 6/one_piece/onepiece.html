@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>One Piece</title>
+        <script src="personajes.js"></script>
+        <style>
+        .img-estilizada {
+            max-width: auto;
+            height: auto;    
+            object-fit: cover;    
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            border: 3px solid #fff; 
+        }
+
+        </style>
+    <body>
+        <h1>Personajes de One Piece</h1>
+        <br/>
+        <br/>
+        <button onclick="generarPersonaje()">Genera un personaje</button>
+        <br/>
+        <button onclick="borrarPersonaje()">Borra el personaje</button>
+        <br/>
+        <br/>
+        <div id="contenedor-fotos" style="display: flex; flex-wrap: wrap; gap: 10px;">
+        </div>         
+        <br/>
+        <br/>
+        <br/>
+        <button onclick="contarSanji()">Nº Sanji</button>
+        <button onclick="contarZoro()">Nº Zoro</button>
+        <button onclick="contarNami()">Nº Nami</button>
+        <button onclick="contarLuffy()">Nº Luffy</button> 
+        <br/>
+        <br/>
+        <p id="resultado"></p>
+    </body>
+</html>
