@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <Title>Floristería</Title>
+        <script src="flores.js"></script>
+    </head>
+    <body>
+
+            <button onclick="generarPlanta(); "value="generar">Generara Planta</button> <br/> <br/>
+            <button onclick="borrarFila()">Borrar Fila</button>
+
+            <h1>Mi Floristería:</h1>
+
+            <table border="1" id="tabla">
+                <tr>
+                    <td>Nombre</td>
+                    <td>Ubicación</td>
+                    <td>Ejemplares</td>
+                    <td>Flor</td>
+                </tr>   
+            </table>
+            <br/>
+            <br/>
+            <button onclick="mostrarNumFilas()">Mostrar el número de filas</button>
+            <p id="resultado"></p>
+    </body>
+</html> 
