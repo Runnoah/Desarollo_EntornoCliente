@@ -11,4 +11,4 @@ Repositorio monorepo con todas mis prácticas académicas organizadas cronológi
 | **1º** | 1 - 4 | Lógica JS y sintaxis básica |
 | **2º** | 5 - 6 | DOM y **React** |
 
-> **Destacado:** Incluye el `Trabajo Final` del segundo trimestre y apuntes sobre React.
+> **Destacado:** Incluye el `Trabajo Final` del segundo trimestre.
